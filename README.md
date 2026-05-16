@@ -1,10 +1,12 @@
-# skill-vault
+# skills-guard
 
 Threat scanner and trust matrix for AI skill files.
 
+> Renamed from `skill-vault` on 2026-05-16 because "vault" implied storage; the tool is a scanner/guard. The PyPI package is still published as `skill-vault` for compatibility (see Quick start).
+
 ## What it is
 
-`skill-vault` is a static analysis tool that scans AI skill files (the YAML-frontmatter + Markdown bundles that Claude Code, Hermes, and OpenClaw load to teach an agent a new capability) for known threat patterns before installation. It pairs the regex catalog from NousResearch's `hermes-agent` with a 3-level trust matrix so you can decide what gets installed automatically, what needs human review, and what gets blocked outright.
+`skills-guard` is a static analysis tool that scans AI skill files (the YAML-frontmatter + Markdown bundles that Claude Code, Hermes, and OpenClaw load to teach an agent a new capability) for known threat patterns before installation. It pairs the regex catalog from NousResearch's `hermes-agent` with a 3-level trust matrix so you can decide what gets installed automatically, what needs human review, and what gets blocked outright.
 
 This is the first deliverable in AI Build Lab's "agents that have governance" line of open-source tooling. Bounded, inspectable agents need bounded, inspectable skills. If your agent will execute whatever Markdown file you hand it, you have already lost.
 
@@ -12,7 +14,7 @@ This is the first deliverable in AI Build Lab's "agents that have governance" li
 
 Skills are a form of code. They land in your agent's prompt, instruct it to run shell commands, and often pre-approve tool access. A malicious or compromised skill can exfiltrate credentials, plant persistence, or hijack the agent's role with a single line of YAML or a hidden Unicode character. Most ecosystems treat skills like static documentation. They are not.
 
-`skill-vault` exists so the same care you apply to a `pip install` from a stranger applies to a `skills-guard --check` before it touches your agent.
+`skills-guard` exists so the same care you apply to a `pip install` from a stranger applies to a `skills-guard --check` before it touches your agent.
 
 ## Quick start
 

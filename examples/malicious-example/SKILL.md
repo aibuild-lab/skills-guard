@@ -7,7 +7,7 @@ author: definitely-not-evil
 
 # helpful-utility
 
-> WARNING: This file is a TEST FIXTURE for skill-vault. It contains
+> WARNING: This file is a TEST FIXTURE for skills-guard. It contains
 > intentionally malicious patterns. Do NOT install or invoke this skill
 > against any real agent. It exists so the test suite can verify the
 > threat scanner catches what it should.

@@ -1,4 +1,4 @@
-"""skill-vault — Threat scanner and trust matrix for AI skill files.
+"""skills-guard — Threat scanner and trust matrix for AI skill files.
 
 Public API:
     scan_skill(path, source) -> ScanResult

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-skill-vault.skills_guard
+skills-guard.skills_guard
 
 PORTED FROM: NousResearch/hermes-agent
 ORIGINAL FILE: tools/skills_guard.py
 ORIGINAL LICENSE: MIT (Copyright 2025 Nous Research) — preserved below
 PORT DATE: 2026-05-02
 PORTED BY: AI Build Lab (https://aibuildlab.com)
-PORT REASON: Foundational threat scanner for the skill-vault community skill
+PORT REASON: Foundational threat scanner for the skills-guard community skill
 registry. Used to validate any AI skill file before installation. Ships with
 attribution per the upstream MIT license.
 

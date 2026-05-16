@@ -1,4 +1,4 @@
-# Contributing to skill-vault
+# Contributing to skills-guard
 
 Thanks for your interest. A few rules to keep the project sustainable.
 
@@ -32,7 +32,7 @@ Examples live under `examples/` and serve as both documentation and test fixture
 
 ## Reporting a vulnerability
 
-If you find a real vulnerability in `skill-vault` itself (not a missing threat pattern), please email tyler@aibuildlab.com instead of opening a public issue. Missing or weak threat patterns should be reported to Hermes upstream.
+If you find a real vulnerability in `skills-guard` itself (not a missing threat pattern), please email tyler@aibuildlab.com instead of opening a public issue. Missing or weak threat patterns should be reported to Hermes upstream.
 
 ## Code style
 

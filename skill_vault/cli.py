@@ -1,4 +1,4 @@
-"""skills-guard — CLI entry point for skill-vault.
+"""skills-guard — CLI entry point.
 
 Usage:
     skills-guard --check ./path/to/skill
@@ -47,7 +47,7 @@ def _build_parser() -> argparse.ArgumentParser:
         help=(
             "Source identifier for trust resolution. "
             "Defaults to 'community'. Examples: 'openai/skills', "
-            "'anthropics/skills', 'aibuild-lab/skill-vault', 'agent-created'."
+            "'anthropics/skills', 'aibuild-lab/skills-guard', 'agent-created'."
         ),
     )
     p.add_argument(

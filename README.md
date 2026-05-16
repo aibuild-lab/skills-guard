@@ -2,7 +2,7 @@
 
 Threat scanner and trust matrix for AI skill files.
 
-> Renamed from `skill-vault` on 2026-05-16 because "vault" implied storage; the tool is a scanner/guard. The PyPI package is still published as `skill-vault` for compatibility (see Quick start).
+> Renamed from `skill-vault` on 2026-05-16 because "vault" implied storage; the tool is a scanner/guard. The PyPI package was never published under the old name, so `pip install skills-guard` is the only install path.
 
 ## What it is
 
@@ -19,7 +19,7 @@ Skills are a form of code. They land in your agent's prompt, instruct it to run 
 ## Quick start
 
 ```bash
-pip install skill-vault
+pip install skills-guard
 
 # Scan a skill directory you cloned from somewhere
 skills-guard --check ./some-skill

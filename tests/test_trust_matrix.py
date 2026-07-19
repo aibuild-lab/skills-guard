@@ -29,6 +29,22 @@ def test_default_classifies_openai_skills_as_trusted():
     assert matrix.classify_source("openai/skills") is TrustLevel.TRUSTED
 
 
+def test_trusted_repository_lookalike_remains_review_required():
+    matrix = TrustMatrix.default()
+    assert matrix.classify_source("openai/skills-copy") is TrustLevel.REVIEW_REQUIRED
+
+
+def test_trusted_repository_lookalike_cannot_bypass_caution_gate():
+    matrix = TrustMatrix.default()
+    allowed, _, result = matrix.evaluate(
+        EXAMPLES / "borderline-example",
+        source="openai/skills-copy",
+    )
+    assert allowed is False
+    assert result.trust_level == "community"
+    assert result.verdict == "caution"
+
+
 def test_explicit_trusted_source_overrides_default():
     matrix = TrustMatrix.from_lists(trusted=["aibuild-lab/curated"])
     assert matrix.classify_source("aibuild-lab/curated") is TrustLevel.TRUSTED

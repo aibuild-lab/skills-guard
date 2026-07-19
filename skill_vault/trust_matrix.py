@@ -21,7 +21,7 @@ BLOCKED          Sources you have explicitly denied. All verdicts block.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from enum import Enum
 from pathlib import Path
 from typing import Iterable, Optional, Set, Tuple
@@ -90,6 +90,12 @@ class TrustMatrix:
         """
         level = self.classify_source(source)
         result = scan_skill(skill_path, source=source)
+
+        # The upstream scanner accepts prefix matches for its trusted repos.
+        # Keep this wrapper's stricter repository boundary authoritative so
+        # lookalike names such as "openai/skills-copy" remain community input.
+        if level is TrustLevel.REVIEW_REQUIRED and result.trust_level == "trusted":
+            result = replace(result, trust_level="community")
 
         # Source-level BLOCKED always wins.
         if level is TrustLevel.BLOCKED:

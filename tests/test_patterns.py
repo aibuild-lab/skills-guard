@@ -239,6 +239,11 @@ def test_trusted_example_is_clean():
     assert result.verdict == "safe", result.findings
 
 
+def test_xquik_example_is_clean():
+    result = scan_skill(REPO_ROOT / "examples" / "xquik-example")
+    assert result.verdict == "safe", result.findings
+
+
 def test_borderline_example_has_findings():
     result = scan_skill(REPO_ROOT / "examples" / "borderline-example")
     assert result.findings, "borderline example should produce at least one finding"

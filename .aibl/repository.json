@@ -1,0 +1,50 @@
+{
+  "schema_version": "aibl.repository-descriptor/v1",
+  "id": "repo.skills-guard",
+  "display_name": "Skills Guard",
+  "repository": "aibuild-lab/skills-guard",
+  "authority_scope": "Skills Guard owns the public source for the skills-guard AI-skill threat scanner, trust matrix wrapper, CLI, examples, and tests. It does not own the Company Hub catalog, upstream Hermes threat-pattern authority, or downstream deployment routing.",
+  "lifecycle": "current",
+  "audience": "public",
+  "privacy_class": "public",
+  "owner": "AIBL Engineering",
+  "human_entry_points": [
+    {
+      "label": "Project README",
+      "path": "README.md"
+    },
+    {
+      "label": "Contributing guide",
+      "path": "CONTRIBUTING.md"
+    }
+  ],
+  "agent_entry_points": [
+    {
+      "label": "Scanner implementation",
+      "path": "skill_vault/skills_guard.py"
+    },
+    {
+      "label": "Trust matrix",
+      "path": "skill_vault/trust_matrix.py"
+    },
+    {
+      "label": "CLI tests",
+      "path": "tests/test_cli.py"
+    }
+  ],
+  "review": {
+    "reviewed_at": "2026-09-02",
+    "cadence_days": 90
+  },
+  "roadmap_refs": [],
+  "replacement_ref": null,
+  "notes": "Company Hub should catalog and route this repository as the separate public product source for the AI-skill threat scanner, while Team HQ remains readable and accepts existing work. The repository packages a verbatim Hermes scanner port with AIBL additions around trust evaluation, CLI behavior, examples, and tests. The evidence does not name private data, media, or credentials that belong in Git for this repository. The bootstrap record left authority and operational state pending qualification from the owning repository.",
+  "extensions": {
+    "aibl.skills-guard": {
+      "authority_role": "ai-skill-threat-scanner",
+      "upstream_attribution": "nousresearch-hermes-agent",
+      "hub_activation_state": "pending-qualification",
+      "coexistence_route": "company-hub-first-teamhq-fallback"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "schema_version": "aibl.repository-descriptor/v1",
+  "schema_version": "aibl.repository-descriptor/v2",
   "id": "repo.skills-guard",
   "display_name": "Skills Guard",
   "repository": "aibuild-lab/skills-guard",
@@ -16,9 +16,7 @@
     {
       "label": "Contributing guide",
       "path": "CONTRIBUTING.md"
-    }
-  ],
-  "agent_entry_points": [
+    },
     {
       "label": "Scanner implementation",
       "path": "skill_vault/skills_guard.py"
@@ -32,8 +30,23 @@
       "path": "tests/test_cli.py"
     }
   ],
+  "agent_entry_points": [
+    {
+      "id": "repository-guide",
+      "kind": "instructions",
+      "purpose": "Read Project README before acting; linked commands retain their owning approval requirements",
+      "path": "README.md",
+      "status": "active",
+      "effect_class": "read_only",
+      "approval_class": "none",
+      "read_only": true,
+      "destructive": false,
+      "idempotent": true,
+      "open_world": false
+    }
+  ],
   "review": {
-    "reviewed_at": "2026-09-02",
+    "reviewed_at": "2026-10-15",
     "cadence_days": 90
   },
   "roadmap_refs": [],
@@ -46,5 +59,6 @@
       "hub_activation_state": "pending-qualification",
       "coexistence_route": "company-hub-first-teamhq-fallback"
     }
-  }
+  },
+  "accountable_owner_slug": "aibl-engineering"
 }
